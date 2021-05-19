@@ -17,7 +17,7 @@ class CreateTravelsTable extends Migration
             $table->id();
             $table->string('city', 100);
             $table->text('description')->nullable();                     //di default non e' nullo, ma se vogliamo annullarlo aggiungere il metodo modificatore nullable()
-            $table->float('price', 3, 1);                                //Float prende numeri decimali. Primo parametro nome colonna, secondo quante cifre ci sono e quante sono decimali.
+            $table->float('price', 3, 1)->nullable();                                //Float prende numeri decimali. Primo parametro nome colonna, secondo quante cifre ci sono e quante sono decimali.
             $table->tinyInteger('is_available')->unsigned()->default(1); //unsigned vale per i numeri, significa senza segni (tipo -1) e di default e' disponibile (1 = true  0 = false)
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class UpdateTravelsTable extends Migration
     public function up()
     {
       Schema::table('travels', function (Blueprint $table) {
-        $table->string('Attractions', 100)->after('price');   //after indica che la colonna verra' inserita dopo price
+        $table->string('attractions', 100)->after('price')->nullable();   //after indica che la colonna verra' inserita dopo price
 
       });
     }
@@ -27,7 +27,7 @@ class UpdateTravelsTable extends Migration
     public function down()
     {
       Schema::table('travels', function (Blueprint $table) {
-      $table->dropColumn('Attractions');
+      $table->dropColumn('attractions');
     });
   }
 }
